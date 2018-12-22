@@ -21,6 +21,7 @@ from django.views.generic.base import TemplateView # new
 import scrapper.views
 
 urlpatterns = [
+	path('admin/', admin.site.urls),
     path('', scrapper.views.home),
     path('data', scrapper.views.data),
     path('search', scrapper.views.search),
