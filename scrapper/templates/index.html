@@ -14,20 +14,20 @@
 	.center {
   margin: auto;
   width: 50%;
-  border: 3px solid green;
   padding: 10px;
 }
+
 	</style>
 </head>
 <body>
 <div id="loginDiv">
 {% block content %}
 {% if user.is_authenticated %}
-  <p style="font-size:20px; margin:20px; background-color:#FFF">Hi <i style="font-size:24px; color:#f44336">{{ user.username }}</i>! Welcome to Malaysia Job Search
-  <a href="{% url 'logout' %}" style="margin-left:700px">LOGOUT</a></p>
+  <p style="font-size:20px; margin:20px">Hi <i style="font-size:24px; color:#f44336">{{ user.first_name }}</i>...!! Welcome to Malaysia Job Search
+  <a href="{% url 'logout' %}" class="waves-effect waves-light btn right">LOGOUT</a></p>
   <div id="root" ></div>
 {% else %}
-  <p class="center">Welcome to Malaysia Job Search.<br>You are not logged in. Please <a href="{% url 'login' %}" >LOGIN</a> to view list and make searching..</p>
+  <p class="center">Welcome to Malaysia Job Search<br>You are not logged in. Please <a href="{% url 'login' %}" class="waves-effect waves-light btn">LOGIN</a> to view list and make searching..</p>
 {% endif %}
 {% endblock %}
 </div>
