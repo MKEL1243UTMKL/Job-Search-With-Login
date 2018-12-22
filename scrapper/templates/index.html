@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carian Kerja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="static/web/main.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<style>
+	.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+	</style>
+</head>
+<body>
+<div id="loginDiv">
+{% block content %}
+{% if user.is_authenticated %}
+  <p style="font-size:20px; margin:20px; background-color:#FFF">Hi <i style="font-size:24px; color:#f44336">{{ user.username }}</i>! Welcome to Malaysia Job Search
+  <a href="{% url 'logout' %}" style="margin-left:700px">LOGOUT</a></p>
+  <div id="root" ></div>
+{% else %}
+  <p class="center">Welcome to Malaysia Job Search.<br>You are not logged in. Please <a href="{% url 'login' %}" >LOGIN</a> to view list and make searching..</p>
+{% endif %}
+{% endblock %}
+</div>
+    
+	
+    <script type="text/babel" src="static/web/MainView.js"></script>
+    <script type="text/babel">
+{% load static %}
+
+ReactDOM.render(
+    <MainView />,
+    document.getElementById('root')
+);
+      </script>
+	  
+	 
+      <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</body>
+</html>
