@@ -16,13 +16,21 @@ body {
     color: #444;
     width: 80%;
     float:left;
-}
+    font-weight: bold;
+    font-style: oblique;
 
-#searchButton {
-    float:right;
-    position:absolute;
+  }
+
+  #searchButton {
+      float:right;
+      position: relative;
+      Top: 40px
+      padding:5px
+      border: 1px solid white;
+
 }
 
 #searchContainer {
     margin: 20px 0px;
+    border: 3px solid black;
 }
